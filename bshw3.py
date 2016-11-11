@@ -40,14 +40,6 @@ for var3 in soup.find_all(class_='footer-logo'):
 html_string = str(soup)
 
 
-x = soup.find_all('img')
-for a in x: 
-	href = a["src"]
-	if not href.startswith("https:"):
-		print ("before changing",a["src"])
-		a["src"] = "https://raw.githubusercontent.com/cvanlent/SI206/master/HW3-StudentCopy/media/logo.png"
-		print (a['src'])
-
 result = str(soup)
 
 
