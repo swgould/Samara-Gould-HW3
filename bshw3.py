@@ -21,23 +21,14 @@ soup = BeautifulSoup(r.text, "html.parser")
 findstudent = soup.find_all(text = re.compile('student'))
 for comment in findstudent: 
 	fixed_text = str(comment).replace('student', 'AMAZING student')
-	comment.replace_with(fixed_text)
+	comment.replaceWith(fixed_text)
 
 
-for var in soup.find_all(class_='field-items'):
-	for link in var.findAll('img'):
-		link['src'] = 'https://s-media-cache-ak0.pinimg.com/736x/cd/2d/ab/cd2dab30dc35d59775903d2d54d6fe29.jpg'
-html_string = str(soup)
-
-for var2 in soup.find_all(class_='logo'):
-	for link in var2.findAll('img'):
-		link['src'] = 'media\logo.png'
-html_string = str(soup)
-
-for var3 in soup.find_all(class_='footer-logo'):
-	for link in var3.findAll('img'):
-		link['src'] = 'media\logo.png'
-html_string = str(soup)
+for img in soup.findAll('img'):
+	if img['src'] == "https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg":
+		img['src'] = 'https://s-media-cache-ak0.pinimg.com/736x/cd/2d/ab/cd2dab30dc35d59775903d2d54d6fe29.jpg'
+	else: 
+		img['src'] = 'media\logo.png'
 
 
 result = str(soup)
