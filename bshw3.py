@@ -31,12 +31,12 @@ html_string = str(soup)
 
 for var2 in soup.find_all(class_='logo'):
 	for link in var2.findAll('img'):
-		link['src'] = 'logo.png'
+		link['src'] = 'media\logo.png'
 html_string = str(soup)
 
 for var3 in soup.find_all(class_='footer-logo'):
 	for link in var3.findAll('img'):
-		link['src'] = 'logo.png'
+		link['src'] = 'media\logo.png'
 html_string = str(soup)
 
 
